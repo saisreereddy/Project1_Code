@@ -1,0 +1,109 @@
+
+  <div class="row" style="text-align:center">
+    <div>
+    <!--  <input id="name" type="text" [(ngModel)]="name" (change)="getDictonaryData(name)"/>-->
+      <br><br>
+      <br/>
+    
+<!--<div *ngFor="let item of autoDictDataresults">
+{{item.word}}
+
+
+<select class="form-control-custom"  placeholder="Filter Category By">
+  <option  [ngValue]="undefined"selected >Get similar names</option>
+
+    <option *ngFor="let item of autoDictDataresults"> {{item.word}}</option>
+
+</select>-->
+
+<!--<div class="container" >
+  <div class="input-field col s12">
+
+    <input type="text" name="query"  [(ngModel)]="name" (change)="getDictonaryData(name)" id="query" placeholder="Type word or phrase" autocomplete="off" maxlength="100" autocapitalize="none" class="autocomplete active-query">
+
+  </div>
+  <div class="suggestions">
+      <ul *ngFor="let item of autoDictDataresults">
+          <li >
+              <a (click)="select(item)">{{item.word}}</a>
+          </li>
+      </ul>
+  </div>
+</div>  	-->
+
+
+
+<section class="filter-wrapper">
+    <div class="keyword-wrapper col-md-10 col-xs-4" style="margin-top:5vh;">
+      
+   <input title="Please enter atleast three characters for auto suggestion"class="form-control-custom" #textbox (keyup.enter)="methodInsideYourComponent($event)" [formControl]="queryField" type="text"  placeholder="Type Word or Phrase"/>
+   <button type="submit" (click)="methodInsideYourComponent2(textbox.value)"><i class="fa fa-search"></i></button>
+
+  </div>
+     <ul class="filter-select" (clickOutside)="onClickedOutside($event)">
+        <li *ngFor="let result of autoDictDataresults" class="filter-select-list" (click)="methodInsideYourComponent2(result.word)"><p class="artist-name">
+          {{result.word}}</p></li>
+
+      </ul>
+   </section>
+<div class="col-md-4"  style="margin-left:3vw;">
+   <div class="card" style="height:30vh;margin-top: 5vh;border:1px solid #F0F0F0;width:86%;overflow:auto;background:#FCFCE8">
+      <div class="card-body">
+       <div class="word_year margin_t_b"> Word of the year</div>
+    
+      </div>
+      <div class="card-body">
+       <div class="margin_t_b word_year_border"></div>
+      </div>
+      <div class="card-body">
+          <div class="margin_t_b word_year">2017</div>
+         </div>
+         <div class="card-body">
+            <div class="margin_t_b word_year word">YOUTHQUAKE</div>
+           </div>
+           <div class="card-body">
+              <div class="margin_t_b word_year">A significant cultural, political, or social change arising from the actions or influence of young people.</div>
+             </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4" style="float:right;margin-right:3vw;">
+      <div class="card" style="height:30vh;margin-top: 5vh;border:1px solid #F0F0F0;width:86%;overflow:auto;background:#FCFCE8">
+         <div class="card-body">
+          <div class="word_year margin_t_b"> Word of the year</div>
+       
+         </div>
+         <div class="card-body">
+          <div class="margin_t_b word_year_border"></div>
+         </div>
+         <div class="card-body">
+             <div class="margin_t_b word_year">2016</div>
+            </div>
+            <div class="card-body">
+               <div class="margin_t_b word_year word">POST-TRUTH</div>
+              </div>
+              <div class="card-body">
+                 <div class="margin_t_b word_year">Relating to or denoting circumstances in which objective facts are less influential in shaping public opinion than appeals to emotion and personal belief.</div>
+                </div>
+       </div>
+     </div>
+   
+
+  
+
+
+<!--   <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+          <img src="{{ slide.img }}" alt="" width="100%">
+    </div>
+</ngx-slick>-->
+
+  </div>
+
+
+</div>
+<angular-image-slider [images]="imagesUrl"></angular-image-slider>
+
+
+
